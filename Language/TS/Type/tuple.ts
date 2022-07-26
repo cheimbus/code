@@ -24,7 +24,7 @@ man.role.push("hello"); // [1, "hi", "hello"]
 const man : {
     role : [number, string];
 } = {
-    role : [1, "hi"]
+    role : [1, "hi"] 
 };
 
 man.role[0] = 400; // [400, "hi"]
