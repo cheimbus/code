@@ -14,7 +14,7 @@ pragma solidity >=0.6.0 <0.9.0;
     call
     A -----------5 ether---------> B
     1.send : 2300 gas, 성공여부를 true 또는 false로 리턴한다, 주소 타입의 내장 함수
-    2.transfer : 2300 gas, 실패시 에러를 발생, 주소 타입의 내장 함수
+    2.transfer : 2300 gas, 실패시 에러를 발생, 주소 타입의 내장 함수. send를 보완함
     3.call : 가변적인 gas, (gas값 지정 가능), 성공여부를 true 또는 false로 리턴
              재진입(reentrancy) 공격 위험성 있음, 2019년 12월 이후 call 사용을 추천
              외부스마트 컨트랙트 함수 호출 가능 
@@ -93,4 +93,7 @@ contract lec13 {
 whoIsMsgSender (lec13-1) -? 반환 msg.sender
 callWhoIsMsgSender (lec13) 함수의 msg.sender = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4
 whoIsMsgSender (lec13-1) 함수의 msg.sender = lec13의 주소
+
+다른 스마트 컨트랙트의 주소의 함수를 사용할 때, 현재 배포한 스마트 컨트랙트 주소에서 그 함수의 리턴값을 사용한다 라고 생각하면 된다.
+쉽게 생각하면 모듈화한 A함수의 리턴값을 다른 B함수에서 사용한다고 생각하면 됨
 */

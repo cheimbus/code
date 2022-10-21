@@ -10,6 +10,7 @@ contract lec4 {
         - 함수 내부에서만 사용 가능, emit 키워드 사용.
         - event 이벤트명(자료형 변수명);
             event Info(string name, uint256 money);
+        - 보통 이벤트명은 대문자로 시작함
     
     
     */
