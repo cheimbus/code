@@ -247,4 +247,27 @@ public class CommonUtils {
 
         return attack_string;
     }
+
+    /**
+     * obj 가 empty string 이면 true
+     * @param obj 확인할 object
+     * @return obj 가 empty string 이면 true
+     */
+    public static final boolean isEmpty(Object obj) {
+        if (obj == null) {
+            return true;
+        } else if ("".equals(obj)) {
+            return true;
+        } else if ("undefined".equals(obj)) {
+            return true;
+        } else if (obj instanceof Object[]) {
+            for (Object v : ((Object[])obj)) {
+                if (!isEmpty(v)) return false;
+            }
+            return true;
+        } else if ("&quot;&quot;".equals(obj)) {
+            return true;
+        }
+        else return false;
+    }
 }
